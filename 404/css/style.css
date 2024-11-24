@@ -1,0 +1,104 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.game-layout {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    width: 30%;
+    padding: 20px;
+    border-right: 2px solid #ccc;
+    background-color: #fafafa;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.main-content {
+    width: 70%;
+    padding: 20px;
+    text-align: center;
+}
+
+canvas {
+    border: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+#controls button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#battle-modal {
+    display: none; /* Domyślnie ukryty */
+}
+
+#battle-modal:not(.hidden) {
+    display: block; /* Wyświetlany, gdy klasa `hidden` jest usunięta */
+}
+
+
+#battle-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+#catch-button {
+    display: none; /* Domyślnie ukryty */
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#battle-status {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.attack-animation {
+    animation: attack-animation 1s;
+}
+
+@keyframes attack-animation {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+#pokemon-storage {
+    list-style-type: none;
+    padding: 0;
+}
+
+#pokemon-storage li {
+    margin: 10px 0;
+}

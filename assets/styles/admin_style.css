@@ -1,0 +1,303 @@
+/* Główne style dla ciała strony */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Sprawia, że main zajmuje dostępne miejsce */
+    width: 70%; /* Szerokość treści na 70% ekranu */
+    margin: 0 auto; /* Marginesy po 15% */
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stylizacja wysuwanej stopki */
+footer {
+    width: 50px;
+    height: 50px;
+    background: #333;
+    color: #fff;
+    border-radius: 10px 10px 0 0; /* Zaokrąglenie górnych rogów */
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    overflow: hidden;
+    transition: width 0.3s, height 0.3s;
+    cursor: pointer;
+}
+
+/* Treść stopki */
+footer .footer-content {
+    display: none;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Efekt wysuwania stopki po najechaniu */
+footer:hover {
+    width: 300px; /* Szerokość po rozwinięciu */
+    height: 150px; /* Wysokość po rozwinięciu */
+}
+
+footer:hover .footer-content {
+    display: block;
+}
+
+header {
+    background: #007bff; /* Można zmienić na #333 dla ciemniejszego wyglądu */
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+/* Stylizacja tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Stylizacja formularzy */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="password"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Responsywność */
+@media (max-width: 1024px) {
+    main {
+        width: 80%; /* Zwiększenie szerokości na mniejszych ekranach */
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 90%; /* Jeszcze większa szerokość na małych urządzeniach */
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        width: 95%; /* Prawie pełna szerokość na telefonach */
+    }
+}
+
+/* Stylizacja główna dla navbaru */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links ul li {
+    display: inline;
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Stylizacja przycisku burger */
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+}
+
+.burger div {
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+/* Dostosowanie dla małych ekranów */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #007bff;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.nav-active {
+        display: flex;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+    }
+
+    .nav-links ul li {
+        margin: 15px 0;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+.gallery-admin {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #222;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    height: 200px; /* Wysokość wymuszonego kontenera */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Dopasowanie zdjęcia */
+    border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.gallery-item .delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 0, 0, 0.8);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.gallery-item .delete-btn:hover {
+    background: red;
+}

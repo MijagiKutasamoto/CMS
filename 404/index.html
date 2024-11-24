@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Strona nie znaleziona</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-layout">
+<div class="sidebar">
+    <h2>Twoje Pokemony:</h2>
+    <ul id="pokemon-storage"></ul>
+    <select id="default-pokemon-select">
+        <option value="">Wybierz domyślnego Pokémona</option>
+    </select>
+    <button id="set-default-button">Ustaw domyślnego</button>
+</div>
+
+        <div class="main-content">
+            <h1>Strona 404 - Nie znaleziono!</h1>
+            <p>Oh nie! Trafiłeś do świata Pokémonów!</p>
+            <canvas id="game-board" width="400" height="400"></canvas>
+            <div id="controls">
+                <button id="up">Góra</button>
+                <button id="left">Lewo</button>
+                <button id="right">Prawo</button>
+                <button id="down">Dół</button>
+            </div>
+            <div id="battle-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h2 id="modal-title"></h2>
+                    <div id="pokemon-info"></div>
+                    <button id="attack-button">Atakuj</button>
+                    <button id="catch-button">Złap</button>
+                    <button id="run-button">Uciekaj</button>
+                    <p id="battle-status"></p>
+                </div>
+            </div>
+			<div id="hidden-menu" style="display: none;">
+    <button id="save-to-json">Zapisz listę do JSON</button>
+    <input type="file" id="load-json-file" accept=".json">
+</div>
+
+        </div>
+    </div>
+    <script src="js/games.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+.gallery-admin {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Odstępy między elementami */
+    justify-content: center; /* Wyśrodkowanie elementów w kontenerze */
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px; /* Odstępy między elementami */
+    padding: 20px;
+    justify-items: center; /* Wyśrodkowanie elementów w siatce */
+}
+
+.gallery-item {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 8px; /* Zaokrąglone rogi */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Delikatny cień */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animacja przy najechaniu */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Powiększenie elementu przy najechaniu */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Intensywniejszy cień */
+}
+
+.gallery-item img {
+    width: 100%; /* Wypełnienie kontenera */
+    height: 100%; /* Zachowanie proporcji */
+    object-fit: cover; /* Przycięcie obrazu */
+    cursor: pointer; /* Kursor w formie dłoni */
+}
+
+.gallery-item button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(255, 0, 0, 0.8); /* Półprzezroczysty czerwony */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    transition: background 0.3s ease; /* Animacja koloru tła */
+}
+
+.gallery-item button:hover {
+    background: rgba(255, 0, 0, 1); /* Intensywniejszy czerwony przy najechaniu */
+}
+
+.gallery-modal {
+    display: none; /* Ukrycie modala domyślnie */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Przyciemnione tło */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: column; /* Kolumnowe ułożenie elementów */
+}
+
+.gallery-modal.visible {
+    display: flex; /* Widoczność modala po dodaniu klasy `visible` */
+}
+
+.gallery-modal img {
+    max-width: 80%;
+    max-height: 80%;
+    margin: 20px;
+    border-radius: 8px; /* Zaokrąglone rogi dla obrazów w modal */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Cień dla obrazka */
+}
+
+.gallery-modal button {
+    background: rgba(255, 255, 255, 0.7); /* Jasne półprzezroczyste tło */
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease; /* Animacja przy najechaniu */
+}
+
+.gallery-modal button:hover {
+    background: rgba(255, 255, 255, 1); /* Intensywniejszy biały */
+}
+
+.gallery-modal .prev,
+.gallery-modal .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Wyrównanie w pionie */
+    font-size: 30px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6); /* Przyciemnione tło przycisków */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease; /* Animacja tła przycisków */
+}
+
+.gallery-modal .prev:hover,
+.gallery-modal .next:hover {
+    background: rgba(0, 0, 0, 0.9); /* Intensywniejsze tło przy najechaniu */
+}
+
+.gallery-modal .prev {
+    left: 20px;
+}
+
+.gallery-modal .next {
+    right: 20px;
+}
+
+.gallery-modal .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease; /* Animacja przy najechaniu */
+}
+
+.gallery-modal .close:hover {
+    background: rgba(255, 255, 255, 1); /* Intensywniejszy biały */
+}
