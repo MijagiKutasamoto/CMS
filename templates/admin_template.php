@@ -11,7 +11,7 @@
 <body>
 <header class="navbar">
     <div class="logo">
-        <H2>mijagiCMS</H2> <!-- Zamień na ścieżkę do swojego logo -->
+        <H2>mCMS</H2> <!-- Zamień na ścieżkę do swojego logo -->
     </div>
     <nav class="nav-links">
     <ul>
@@ -28,6 +28,7 @@
                 <?php echo htmlspecialchars($menuPlugin['menu_title']); ?>
             </a></li>
         <?php endforeach; ?>
+        <li><a href="logout.php">Wyloguj</a></li>
     </ul>
 </nav>
 
@@ -54,7 +55,7 @@ function toggleMenu() {
     </main>
     <footer>
     <div class="footer-content">
-        <p>&copy; <?php echo date("Y"); ?> CMS. Wszelkie prawa zastrzeżone.</p>
+        <p>ver 0.2 &copy; <?php echo date("Y"); ?> CMS. Wszelkie prawa zastrzeżone.</p>
         <p>Dodatkowe informacje lub treść.</p>
     </div>
 </footer>
