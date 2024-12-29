@@ -19,7 +19,7 @@ echo '<link rel="stylesheet" href="/assets/styles/' . htmlspecialchars($layout) 
 
 <header class="navbar">
     <div class="logo">
-        <a href="/"><img src="<?php echo htmlspecialchars($settings['logo'] ?? '/assets/images/default-logo.png'); ?>" alt="Logo"></a>
+        <a href="/"><img src="<?php echo htmlspecialchars($settings['logo'] ?? '/uploads/logo.PNG'); ?>" alt="Logo"></a>
     </div>
         <nav class="nav-links">
         <ul>
@@ -71,7 +71,7 @@ $sliderImages = !empty($settings['slider_images']) ? json_decode($settings['slid
 
 <footer>
     <div class="footer-content">
-        <p>&copy; <?php echo date("Y"); ?> CMS. Wszelkie prawa zastrzeżone.</p>
+        <p>ver. 0.2 &copy; <?php echo date("Y"); ?>. Wszelkie prawa zastrzeżone.</p>
     </div>
 </footer>
 <script>
