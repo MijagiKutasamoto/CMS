@@ -3,6 +3,7 @@ return [
     'name' => 'Blog',
     'menu_title' => 'Zarządzanie Blogiem',
     'menu_url' => 'manage_blog.php',
+    'version' => '1.0.0', // Dodano numer wersji    
     'install' => function ($pluginPath, $adminPath, $pdo) {
         // 1. Przenoszenie plików administracyjnych
         $pluginAdminPath = $pluginPath . '/admin/';

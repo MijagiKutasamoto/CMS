@@ -65,28 +65,17 @@ ob_start();
 var quill = new Quill('#editor-container', {
     theme: 'snow',
     modules: {
-        toolbar: {
-            container: [
-                [{ 'header': [1, 2, 3, false] }],
-                ['bold', 'italic', 'underline', 'strike'],
-                [{ 'color': [] }, { 'background': [] }],
-                ['blockquote', 'code-block'],
-                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-                ['link', 'image'], // Dodanie obsługi linków i obrazków
-                ['clean']
-            ],
-            handlers: {
-                link: function() {
-                    const value = prompt('Wprowadź URL linku:');
-                    if (value) {
-                        this.quill.format('link', value);
-                    }
-                }
-            }
-        }
+        toolbar: [
+            [{ 'header': [1, 2, 3, false] }],
+            ['bold', 'italic', 'underline', 'strike'],
+            [{ 'color': [] }, { 'background': [] }],
+            ['blockquote', 'code-block'],
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            ['link', 'image'],
+            ['clean']
+        ]
     }
 });
-
 
 // Funkcje Drag & Drop
 function allowDrop(event) {

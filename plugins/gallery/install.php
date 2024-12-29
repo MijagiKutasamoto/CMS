@@ -3,6 +3,7 @@ return [
     'name' => 'Galeria',
     'menu_title' => 'Galeria',
     'menu_url' => 'manage_gallery.php',
+    'version' => '1.0.0', // Dodano numer wersji    
     'install' => function ($pluginPath, $adminPath, $pdo) {
         // 1. Przenoszenie plików administracyjnych
         $pluginAdminPath = $pluginPath . '/admin/';

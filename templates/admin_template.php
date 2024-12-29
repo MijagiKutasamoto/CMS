@@ -11,7 +11,7 @@
 <body>
 <header class="navbar">
     <div class="logo">
-        <H2>mCMS</H2> <!-- Zamień na ścieżkę do swojego logo -->
+        <H2>mijagiCMS</H2> <!-- Zamień na ścieżkę do swojego logo -->
     </div>
     <nav class="nav-links">
     <ul>

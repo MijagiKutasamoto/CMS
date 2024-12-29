@@ -53,32 +53,21 @@ ob_start();
 </form>
  
 <script>
-// Inicjalizacja edytora Quill
+// Inicjalizacja edytora Quill z istniejącą treścią i dodatkowymi modułami
 var quill = new Quill('#editor-container', {
     theme: 'snow',
     modules: {
-        toolbar: {
-            container: [
-                [{ 'header': [1, 2, 3, false] }],
-                ['bold', 'italic', 'underline', 'strike'],
-                [{ 'color': [] }, { 'background': [] }],
-                ['blockquote', 'code-block'],
-                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-                ['link', 'image'], // Dodanie obsługi linków i obrazków
-                ['clean']
-            ],
-            handlers: {
-                link: function() {
-                    const value = prompt('Wprowadź URL linku:');
-                    if (value) {
-                        this.quill.format('link', value);
-                    }
-                }
-            }
-        }
+        toolbar: [
+            [{ 'header': [1, 2, 3, false] }],
+            ['bold', 'italic', 'underline', 'strike'],
+            [{ 'color': [] }, { 'background': [] }],
+            ['blockquote', 'code-block'],
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            ['link', 'image'],
+            ['clean']
+        ]
     }
 });
-
 
 // Funkcja do obsługi przesyłania obrazków
 quill.getModule('toolbar').addHandler('image', function() {
